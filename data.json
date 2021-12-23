@@ -1,0 +1,153 @@
+[
+    {
+        "statement": "Oceania is known to be a:",
+        "op1": "Continent",
+        "op2": "Peninsula",
+        "op3": "Island",
+        "op4": "Country",
+        "answer": "Continent",
+        "difficulty": 1,
+        "category": "Geography"
+    },
+    {
+        "statement": "Where are the ruins of Sparta?",
+        "op1": "France",
+        "op2": "Greece",
+        "op3": "Italy",
+        "op4": "Spain",
+        "answer": "Greece",
+        "difficulty": 2,
+        "category": "Geography"
+    },
+    {
+        "statement": "What is the name of the imaginary line that passes through the center of the North Pole and the South Pole?",
+        "op1": "First axis",
+        "op2": "Prime global meridian",
+        "op3": "Prime meridian",
+        "op4": "Central axis",
+        "answer": "Prime meridian",
+        "difficulty": 3,
+        "category": "Geography"
+    },
+    {
+        "statement": "The deepest point of the Mariana Trench is exactly at:",
+        "op1": "11,144 meters",
+        "op2": "11,054 meters",
+        "op3": "11,044 meters",
+        "op4": "11,034 meters",
+        "answer": "11,034 meters",
+        "difficulty": 5,
+        "category": "Geography"
+    },
+    {
+        "statement": "What is the country of 1,000 lakes?",
+        "op1": "Finland",
+        "op2": "EE.UU",
+        "op3": "Canada",
+        "op4": "Brazil",
+        "answer": "Finland",
+        "difficulty": 4,
+        "category": "Geography"
+    },
+    {
+        "statement": "What animal has 47 teeth?",
+        "op1": "Dolphin",
+        "op2": "Mosquito",
+        "op3": "Otter",
+        "op4": "Dog",
+        "answer": "Mosquito",
+        "difficulty": 3,
+        "category": "Animals"
+    },
+    {
+        "statement": "Which of the following animals is not a marsupial?",
+        "op1": "Koala",
+        "op2": "Opossum",
+        "op3": "Numbat",
+        "op4": "Sloth",
+        "answer": "Sloth",
+        "difficulty": 4,
+        "category": "Animals"
+    },
+    {
+        "statement": "What color is the fur of a polar bear?",
+        "op1": "White",
+        "op2": "Pink",
+        "op3": "Gray",
+        "op4": "Brown",
+        "answer": "White",
+        "difficulty": 1,
+        "category": "Animals"
+    },
+    {
+        "statement": "Which species has the most powerful bite in the animal kingdom?",
+        "op1": "Lion",
+        "op2": "Alligator",
+        "op3": "Shark",
+        "op4": "Hippopotamus",
+        "answer": "Alligator",
+        "difficulty": 2,
+        "category": "Animals"
+    },
+    {
+        "statement": "Which of these species cannot walk?",
+        "op1": "Fly",
+        "op2": "Dragon-fly",
+        "op3": "Bee",
+        "op4": "Moth",
+        "answer": "Dragon-fly",
+        "difficulty": 5,
+        "category": "Animals"
+    },
+    {
+        "statement": "What is the closest star to the solar system?",
+        "op1": "Pole Star",
+        "op2": "Pollux",
+        "op3": "Proxima Centauri",
+        "op4": "Alpha Centauri",
+        "answer": "Proxima Centauri",
+        "difficulty": 1,
+        "category": "Astronomy"
+    },
+    {
+        "statement": "What day did Armstrong walk on the Moon?",
+        "op1": "July 16, 1969",
+        "op2": "July 21, 1969",
+        "op3": "June 16, 1969",
+        "op4": "June 21, 1969",
+        "answer": "July 21, 1969",
+        "difficulty": 2,
+        "category": "Astronomy"
+    },
+    {
+        "statement": "What is the name of the project aimed at the search for intelligent life beyond Earth?",
+        "op1": "Isaac Asimov Project",
+        "op2": "SETI Project",
+        "op3": "Area 51 Project",
+        "op4": "Icarus Project",
+        "answer": "SETI Project",
+        "difficulty": 3,
+        "category": "Astronomy"
+    },
+    {
+        "statement": "In what century was the first telescope invented?",
+        "op1": "X century",
+        "op2": "VIII century",
+        "op3": "XII century",
+        "op4": "XVII century",
+        "answer": "XVII century",
+        "difficulty": 4,
+        "category": "Astronomy"
+    },
+    {
+        "statement": "What is the largest star known for humanity?",
+        "op1": "VY Canis Majoris",
+        "op2": "Arcturus",
+        "op3": "UY Scuti",
+        "op4": "Centauri",
+        "answer": "UY Scuti",
+        "difficulty": 5,
+        "category": "Astronomy"
+    }
+
+]
