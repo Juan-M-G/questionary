@@ -10,5 +10,8 @@ This software was developed in Python
 
 Saves Max 5 scores and order from highest to lowest.
 
-*You can download the exe file from this link:  https://1drv.ms/u/s!AqJE0S3d-CpAlnMqf4KEVTHdPACJ?e=vBf7kc
-Put the file in the root folder.*
+*You can download the exe file from this link:  https://1drv.ms/u/s!AqJE0S3d-CpAlnMqf4KEVTHdPACJ?e=vBf7kc*
+
+-Put the file in the root folder.
+-Questions data goes in the root folder.
+-Leaderboards goes in the save folder
