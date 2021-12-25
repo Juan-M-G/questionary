@@ -23,8 +23,8 @@ def validate(op):
                 raise
         if op == 2:
             res = input("Do you want to continue?: Y/N: ")
-            if res.upper() != "Y" and res.upper() != "N":
-                print(res.upper() != "N")
+            res = res.upper()
+            if res != "Y" and res != "N":
                 raise
         if op == 3:
             res = input("\nWrite the correct answer and then press Enter.\n")
@@ -43,7 +43,6 @@ def validate(op):
     except:
         input("Select a valid option.")
 
-
 def load_questions():
     questions = []
     try:
@@ -61,12 +60,12 @@ def load_questions():
         print("\n\nData questions not found, please put a data before start game")
         input("\nPress Enter to continue....")
 
-
 def game():
     questions = load_questions()
     lvls = []
     score = 0
     cat_num = len(set(i.get_name for i in questions))
+    next_q = None
 
     for i in range(0, cat_num):
         lvls.append(Level(i+1, (i+1)*500))
@@ -81,7 +80,7 @@ def game():
                    selected_question.get_op3, selected_question.get_op4]
         random.shuffle(options, random.random)
         while res == None:
-            print(f"QUESTION {j.get_level_number}".center(50, "="), end=" ")
+            print(f"QUESTION {j.get_level_number}==CATEGORY: {selected_question.get_name}".center(50, "="), end=" ")
             print(f"score: {score} \n")
             print(selected_question.get_statement)
             print(f"a) {options[0]}")
@@ -90,17 +89,20 @@ def game():
             print(f"d) {options[3]}")
             res = validate(3)
         if options[res] == selected_question.get_answer:
-            print("¡¡¡¡RESPUESTA CORRECTA!!!!!")
+            print("\n¡¡¡¡RESPUESTA CORRECTA!!!!!")
             score += j.get_points
         else:
             print("RESPUESTA INCORRECTA")
-        input("\n\nPres Enter to show next question.")
-
-
+        while next_q == None:
+            next_q = validate(2)
+        if next_q == "Y":
+            next_q = None
+        else:
+            return
+        
 
 def show_scores():
     pass
-
 
 def run():
     option = 0
@@ -113,13 +115,11 @@ def run():
         option = validate(1)
         if option == 1:
             game()
-            # Comienza un nuevo juego
         if option == 2:
             show_scores()
         if option == 3:
             clear()
             return "Thanks for playing"
-
 
 if __name__ == '__main__':
     run()
