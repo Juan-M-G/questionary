@@ -43,6 +43,7 @@ def validate(op):
     except:
         input("Select a valid option.")
 
+
 def load_questions():
     questions = []
     try:
@@ -59,6 +60,7 @@ def load_questions():
     except:
         print("\n\nData questions not found, please put a data before start game")
         input("\nPress Enter to continue....")
+
 
 def game():
     questions = load_questions()
@@ -80,7 +82,8 @@ def game():
                    selected_question.get_op3, selected_question.get_op4]
         random.shuffle(options, random.random)
         while res == None:
-            print(f"QUESTION {j.get_level_number}==CATEGORY: {selected_question.get_name}".center(50, "="), end=" ")
+            print(f"QUESTION {j.get_level_number}==CATEGORY: {selected_question.get_name}".center(
+                50, "="), end=" ")
             print(f"score: {score} \n")
             print(selected_question.get_statement)
             print(f"a) {options[0]}")
@@ -89,35 +92,99 @@ def game():
             print(f"d) {options[3]}")
             res = validate(3)
         if options[res] == selected_question.get_answer:
-            print("\n¡¡¡¡RESPUESTA CORRECTA!!!!!")
+            # print("\n¡¡¡¡RESPUESTA CORRECTA!!!!!")
             score += j.get_points
         else:
             print("RESPUESTA INCORRECTA")
+            return save_score([0, j.get_level_number])
+        if j.get_level_number == len(lvls):
+            clear()
+            print(f"YOU WIN, CONGRATULATIONS".center(50, "="), end=" ")
+            return save_score([score, j.get_level_number])
         while next_q == None:
             next_q = validate(2)
         if next_q == "Y":
             next_q = None
         else:
-            return
-        
+            return save_score([score, j.get_level_number])
+
+
+def save_score(score):
+    clear()
+    name = "                       "
+    while len(name) > 10:
+        name = input("Put your name (max 10 characters): ")
+    try:
+        with open(LEADERBOARD, "r", encoding="utf-8") as f:
+            data = f.read()
+            jsondata = json.loads(data)
+    except:
+        jsondata = []
+        pass
+    user = Player(name, score[1], score[0])
+    with open(LEADERBOARD, "w", encoding="utf-8") as f:
+        jsondata.append({
+            "name": user.get_name,
+            "round": user.get_level,
+            "score": user.get_score
+        })
+        for i in range(len(jsondata)):
+            for j in range(len(jsondata)):
+                if int(jsondata[i]["score"]) > int(jsondata[j]["score"]):
+                    aux = jsondata[j]
+                    jsondata[j] = jsondata[i]
+                    jsondata[i] = aux
+        if len(jsondata) > 5:
+            jsondata.pop(len(jsondata)-1)
+        json.dump(jsondata, f, indent=4)
+    f.close()
+
 
 def show_scores():
-    pass
+    clear()
+    try:
+        with open(LEADERBOARD, "r", encoding="utf-8") as f:
+            data = f.read()
+            jsondata = json.loads(data)
+        print("*********************************".center(50, "="))
+        print("LEADERBOARDS".center(50, "="))
+        print("*********************************".center(50, "=")+"\n")
+        for line in range(len(jsondata)):
+            txt = f"{line + 1}. " + jsondata[line]["name"]
+            print(txt.ljust(20, "."), end=" ")
+            print(
+                f"Level: {jsondata[line]['round']}..Score: {jsondata[line]['score']}")
+        input("\n\nPress Enter to continue....")
+        f.close()
+    except:
+        print("\n\nLeaderboards not fount, please play a game first")
+        input("\nPress Enter to continue....")
+
+
+def clear_scores():
+    clear()
+    if os.path.exists("./save/leaderboards.json"):
+        os.remove("./save/leaderboards.json")
+    else:
+        print("\n\nLeaderboards not fount, please play a game first")
+        input("\nPress Enter to continue....")
 
 def run():
-    option = 0
-    while option != 4:
+    while True:
         clear()
         print("WElCOME TO QUESTIONARY GAME".center(50, "="))
         print("\n\n1. New Game.\n")
         print("2. Leaderboards.\n")
-        print("3. Exit.\n")
+        print("3. Clean leaderboards.\n")
+        print("4. Exit.\n")
         option = validate(1)
         if option == 1:
             game()
         if option == 2:
             show_scores()
         if option == 3:
+            clear_scores()
+        if option == 4:
             clear()
             return "Thanks for playing"
 
