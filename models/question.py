@@ -9,6 +9,7 @@ class Question(Category):
         self._op4 = op4
         self._answer = answer
         self._difficulty = difficulty
+        # Inherits from the category class
         super().__init__(name =  "category")
 
     @property
