@@ -4,23 +4,23 @@ class Player:
        self._level = level
        self._score = score
 
-    @property.getter
+    @property
     def get_name(self):
         return self._name
-    @property.setter
+    @get_name.setter
     def set_name(self, name):
        self._name = name
 
-    @property.getter
+    @property
     def get_level(self):
         return self._level
-    @property.setter
+    @get_level.setter
     def set_level(self, level):
        self._level = level
 
-    @property.getter
+    @property
     def get_score(self):
         return self._score
-    @property.setter
+    @get_score.setter
     def set_score(self, score):
        self._score = score
